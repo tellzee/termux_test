@@ -1,0 +1,7 @@
+Package: myutils
+Version: 1.0
+Architecture: all
+Maintainer: yourname
+Description: A simple utility pack for Termux (batteryinfo, netcheck, quicknote)
+
+

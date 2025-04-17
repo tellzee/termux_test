@@ -1,0 +1,11 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+info=$(termux-battery-status)
+level=$(echo "$info" | grep -o '"percentage": *[0-9]*' | grep -o '[0-9]*')
+status=$(echo "$info" | grep -o '"status": *"[^"]*"' | cut -d'"' -f4)
+
+if [ "$status" = "CHARGING" ]; then
+    echo -e "\e[1;32mBattery: $level% (Charging)\e[0m"
+else
+    echo -e "\e[1;33mBattery: $level% ($status)\e[0m"
+fi

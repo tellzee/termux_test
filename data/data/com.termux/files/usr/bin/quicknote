@@ -1,0 +1,16 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+# Set path to your shared storage notes file
+NOTES_FILE="$HOME/storage/shared/notes.md"
+
+# Ask for the note text
+echo -n "Write a note: "
+read note
+
+# Timestamp (optional)
+timestamp=$(date "+%Y-%m-%d %H:%M")
+
+# Append to file
+echo "- [$timestamp] $note" >> "$NOTES_FILE"
+
+echo -e "\e[1;32mNote saved to $NOTES_FILE\e[0m"
